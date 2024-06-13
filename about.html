@@ -137,7 +137,43 @@ header, main {
     max-width: 800px; /* Keep content from stretching too wide */
     text-align: center;
 }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Background color remains unchanged */
+    color: white;
+    padding: 40px; /* Increase padding for larger pop-up size */
+    border-radius: 10px; /* Increase border-radius for rounded corners */
+    display: none; /* Initially hidden */
+    z-index: 9999; /* Ensure it's on top */
+}
+
+.popup img {
+    display: block;
+    margin: 0 auto 10px; /* Add margin-bottom to create space between the image and the text */
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.popup p {
+    margin-top: 10px; /* Add margin-top to create space between the text and the image */
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 9999;
+}
     </style>
+    <link rel="icon" type="image/png" sizes="32x32" href="quick_quiz_icon/icon32x32.png">
 </head>
 <body>
     <div class="wrapper">
@@ -153,20 +189,28 @@ header, main {
             <section>
                 <h3>Developers:</h3>
                 <ul>
-                    <li>John Alwyn B. Decena</li>
-                    <li>Jehoshaphat P. Rañola</li>
-                    <li>Diechel Ann T. Arisgado</li>
-                    <li>Mark Vincent C. Fernandez</li>
+                    <li class="developer-name">John Alwyn B. Decena</li>
+                    <li class="developer-name">Jehoshaphat P. Rañola</li>
+                    <li class="developer-name">Diechel Ann T. Arisgado</li>
+                    <li class="developer-name">Mark Vincent C.  Fernandez</li>
                 </ul>
             </section>
             <section>
                 <h2>Professor:</h2>
                 <ul>
-                    <li>Roque Jerico P. Turingan</li>
+                    <li class="developer-name">Roque Jerico P. Turingan</li>
                 </ul>
             </section>
         </main>
     </div>
     <a href="index.html" class="back-button">Back</a>
-</body>
+
+      <!-- Pop-up container -->
+    <div class="popup" id="popup">
+        <button class="close-button" id="closeButton">&times;</button>
+        <img id="popupImage" src="" alt="Developer Image">
+        <p id="popupText"></p>
+    </div>
+
+    <script src="about.js"></script>
 </html>
